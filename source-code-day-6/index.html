@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* pseudo class */
+
+        a:link {
+            color: purple;
+        }
+
+        a:visited {
+            color: green;
+        }
+
+        a:hover {
+            color: pink;
+        }
+
+        a:active {
+            color: red;
+        }
+
+        .breakfast::before {
+            content: "Hôm nay";
+        }
+
+        .breakfast::after {
+            content: " nghìn VND";
+        }
+
+        .today::before {
+            position: absolute;
+            content: "";
+            left: 0;
+            top: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 10px solid red;
+        }
+
+        .today::after {
+            content: url(https://media.istockphoto.com/vectors/cute-flat-sun-icon-vector-id1124567572?k=6&m=1124567572&s=612x612&w=0&h=FFU7e1Tb4LI6e7f6xU-uJZoGRSLF3koVNXHzDKSDX9g=);
+        }
+
+        .balloon::first-letter{
+            color: teal;
+        }
+
+        .balloon::first-line{
+            color:tomato
+        }
+
+        .balloon::selection{
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="http://techmaster.vn" target="_blank">Go to Techmaster</a>
+    <p class="breakfast"> ăn sáng hết 10</p>
+    <p class="breakfast"> ăn sáng hết 20</p>
+    <p class="breakfast"> ăn sáng hết 30</p>
+    <p class="breakfast"> ăn sáng hết 40</p>
+    <p class="breakfast"> ăn sáng hết 50</p>
+
+    <p class="today">Hôm nay là một ngày đẹp trời</p>
+
+    <p class="balloon">Balloons are pretty and come in different colors, different shapes, different sizes, and they can even adjust
+        sizes as needed. But don't make them too big or they might just pop, and then bye-bye balloon. It'll be gone and
+        lost for the rest of mankind. They can serve a variety of purposes, from decorating to water balloon wars. You
+        just have to use your head to think a little bit about what to do with them.</p>
+
+</body>
+
+</html>

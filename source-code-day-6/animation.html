@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        .animation {
+            background-color: teal;
+            width: 200px;
+            text-align: center;
+            color: white;
+            font-size: 30px;
+            animation: change-color 3s infinite alternate;
+            /* animation: move-right 3s infinite alternate; */
+        }
+
+        @keyframes move-right {
+            from {
+                width: 200px;
+            }
+
+            to {
+                width: 500px;
+            }
+        }
+
+        @keyframes change-color {
+            0% {
+                background-color: turquoise;
+            }
+
+            20% {
+                background-color: violet;
+            }
+
+            40% {
+                background-color: yellow;
+            }
+
+            60% {
+                background-color: aquamarine;
+            }
+
+            80% {
+                background-color: blueviolet;
+            }
+        }
+
+        .heart{
+            animation: heart 1s ease-in-out infinite;
+            padding-top: 30px;
+        }
+        @keyframes heart{
+            0%{
+                transform: scale(1);
+            }
+            20%{
+                transform: scale(1.2);
+            }
+            30%{
+                transform: scale(1);
+            }
+            35%{
+                transform: scale(1.2)
+            }
+
+        }
+         
+  
+    </style>
+</head>
+
+<body>
+    <p class="animation">Animation</p>
+    <img class="heart" src="https://media.istockphoto.com/vectors/red-flat-heart-icon-love-symbol-vector-illustration-vector-id1158696193?b=1&k=6&m=1158696193&s=612x612&w=0&h=-yfX2OLP20GsP8aAgqjgalmDRbpu7Cy7oIak4--pzxM="
+        alt="Heart">
+</body>
+
+</html>

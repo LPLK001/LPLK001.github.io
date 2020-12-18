@@ -1,0 +1,27 @@
+p{
+    text-align: center;
+    font-size: 48px;
+    text-transform: uppercase;
+}
+span::before{                
+    content: "CODING";
+    animation-name: change;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    width: fit-content;
+    animation-delay: 0.1s;
+    }
+@keyframes change{
+    0%{
+        background-color: green;
+        content: "LEARNING";
+    }
+    50%{         
+        background-color: indigo;
+        content: "TEACHING";
+    }
+    90%{
+        background-color: orangered;
+    }
+
+}
