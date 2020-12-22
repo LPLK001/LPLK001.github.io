@@ -1,0 +1,115 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+#container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#block{
+    border: 1px solid #ddd;
+    margin-top: 50px
+
+}
+#header{
+    color: #fff;
+    font-size: 12px;
+    padding: 5px 10px;
+    margin: 0;
+    line-height: 1.5;
+    background: #c00;
+    font-weight: 700;
+    width: 553px;
+}
+
+a{
+    color: #900;
+    font-weight: 700;
+    margin: 8px;
+    float: left;
+    font-size: 15px;
+}
+
+#mark{
+    color: #900;
+    font-weight: 700;
+    margin: 8px 0;
+    float: left;
+    font-size: 15px;
+}
+
+.special{
+    width: 16.6677%;
+    display: table-cell;
+    color: #1f10e2;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.row{
+    display: table;
+    width: 469px;
+    height: 33.5px;
+    font-size: 28px;
+    font-weight: 700;
+    font-family: Arial;
+
+}
+
+.col{
+    width: 15%;
+    font-size: 15px;
+    font-weight: 400;
+    color: #000;
+    font-family: Arial;
+}
+
+table, th, td{
+    border: 1px solid #ddd;
+    border-spacing: 0;
+    border-collapse: collapse;
+    vertical-align: middle;
+    padding: 3px;
+    text-align: center;
+}
+
+.two{
+    width: 50%;
+    float: left;
+
+}
+
+.three{
+    width: 33.33%;
+    float: left;
+}
+
+.four{
+    width: 25%;
+    float: left;
+}
+
+#merge{
+    border-bottom: none;
+}
+
+#merge2{
+    border-top: none;
+}
+
+.striped{
+    background-color: #F9F9F9;
+}
+
+#prize{
+    color: #f40819;
+    font-size: 34px;
+}
+
+#prizes{
+    color: #f40819;
+    font-size: 30px;
+}
