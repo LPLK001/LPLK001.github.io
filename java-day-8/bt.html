@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // chu vi hình tròn
+        function banKinh(r) {
+            let chuVi = Math.PI * 2 * r
+            return chuVi
+        }
+
+        let data = banKinh(1 / 2)
+        console.log(data)
+
+        // diện tích hình tròn
+        function banKinh1(R) {
+            let dienTich = Math.PI * Math.pow(R, 2)
+            return dienTich
+        }
+
+        let data2 = banKinh1(1)
+        console.log(data2)
+
+        // đổi cm thành m
+        function length(cm) {
+            let change = cm / 100
+            return change
+        }
+
+        let data3 = length(100)
+        console.log(data3 + "m")
+
+        // đổi phút thành giờ 
+        function time(min) {
+            let change1 = min / 60
+            return change1
+        }
+
+        let data4 = length(30)
+        console.log(data4 + "h")
+
+        // đổi độ C thành F
+        function therMal(C) {
+            let F = C * 1.8 + 32
+            return F
+        }
+
+        let data5 = therMal(0)
+        console.log(data5 + "℉")
+
+        // tính BMI
+        function body(kg, m) {
+            let BMI = kg / (m * m)
+            return BMI
+        }
+
+        let data6 = body(68, 1.65)
+        console.log(data6)
+
+        // random 1 số trong khoảng
+        function ranDom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        
+        let data7=ranDom(1,100)
+        console.log(data7)
+    </script>
+</body>
+
+</html>

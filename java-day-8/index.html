@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script src="./main.js"></script>
+    <!-- có thể đặt trong thẻ head hoặc cuối thẻ body , nên đặt cuối -->
+    <script>
+        // alert("Xin chao")
+        // document.write("Xin chao")
+        console.log('Hello World');
+
+        let age = 35;
+        // console.log(age);
+        // age = 35;
+        console.log(age)
+
+        const age1 = 40
+        console.log(age1)
+        // age1=50
+        // =========================================
+        let _num
+        let $num1
+        let firstName = "Nguyen"
+        let lastName = "Van B"
+        let fullName = firstName + " " + lastName
+        console.log(fullName)
+
+        let fullName1 =`${firstName} ${lastName} năm nay ${2020-1992} tuổi`
+        console.log(fullName1)
+
+        // =========================================
+
+        // sược trc nháy kép hoặc dùng nháy đơn vd "'Hà Nội' hôm nay lạnh quá"
+        let mess = "\"Hà Nội\" hôm nay lạnh quá"
+        console.log(mess)
+
+        // dùng \n để xuống dòng 
+        let text = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates iusto necessitatibus fugit ratione expedita ipsum voluptate\n , nemo eligendi ducimus sequi perspiciatis debitis, nihil ullam aut praesentium a, consequatur \n cupiditate eos?" + "Xin chào"
+        console.log(text)
+        console.log(typeof text)
+        // =========================================
+
+        let num1 = 10;
+        console.log(typeof num1)
+        let num2 = 20
+        console.log( num1 + num2)
+        console.log( num1 - num2)
+        console.log( num1 * num2)
+        console.log( num1 / num2)
+        // % là tìm số dư
+        console.log (num1 % num2)
+        // ** là số mũ VD 10^20
+        console.log (num1 ** num2)
+        console.log(Math.pow(num1, num2))
+        console.log(Math.sqrt(num1))
+        console.log(Math.round(1.5))
+        console.log(Math.ceil(1.2))
+        console.log(Math.floor(1.9))
+
+
+        console.log(Math.max(3,2,4,5,6))
+        console.log(Math.min(3,-2,4,5,6))
+
+        console.log(""+1 +0)
+        console.log(""-1 +0)
+        console.log(true + false)
+        console.log(6/"3")
+        console.log("2"*"3")
+        console.log(4+5+"px")
+        console.log("$" + 4+5)
+        console.log("4"-2)
+        console.log("4px"-2)
+        console.log(7/0)
+        console.log("-9"+5)
+        console.log("-9"-5)
+        console.log(null +1)
+        console.log(undefined +1)
+        console.log(typeof(7) +1)
+        console.log(typeof("9")+5)
+
+        console.log("9"== 9)
+        // 3= vừa so sánh giá trị vs loại 
+        console.log("9"=== 9)
+        console.log((0.1*10+0.2*10)/10)
+
+        let a=1
+        let b=22
+        let name="John"
+        console.log(a+b)
+        console.log(a+name)
+        console.log(a+name+b)
+        console.log(a+b+name)
+        console.log(a+b+name)
+        console.log(`Hello ${name}`)
+        console.log(`${name} +1`)
+
+        // định nghĩa function
+        function SayHello(name, year) {
+            // console.log("Xin chào" + name)
+            console.log(`Xin chào ${name}. Năm nay ${2020-year} tuổi`)
+        }
+        // Gọi function
+        SayHello("Anh A", 1992)
+        SayHello("Anh B", 1996)
+
+        // default
+        function sum(a =10,b=8){
+            let result= a+b
+            // ko được trả về
+            // console.log('a')
+            // console.log('a')
+            // console.log('a')
+
+            return result
+            // đc trả về
+            // console.log('a')
+            // console.log('a')
+            // console.log('a')
+
+        }
+
+        let data= sum(10,8)
+        console.log(data)
+        console.log(data ==20)
+
+        console.log(sum(1))
+        console.log(sum())
+
+        // ==============================
+        function hello(name1){
+        console.log("Xin chào các bạn")}
+        hello()
+
+
+        function hello1 (name2) {
+            console.log("Xin chào"+name2)
+        }
+        hello1(" X")
+
+
+        function hello2(name2) {
+            console.log("Xin chào"+ name2)
+        }
+        hello2(` "X"`)
+
+        function sum1(c,d) {
+            number12=100
+            // khi khai báo biến ko có từ khóa thì đó sẽ là biến global
+            let total=c+d
+            return total
+        }
+        let data1=sum1(2,3)
+        console.log(data1)
+        console.log(number12)
+
+        function mu2(e){
+            let result1=Math.pow(e,2)
+            return result1
+            // biến trong function
+        }
+        let data2=mu2(2)
+        console.log(data2)
+
+        function year1(f) {
+            let century=Math.round(f/100)
+            return century
+        }
+        let data3=year1(2020)
+        console.log(data3)
+
+        // biến nằm ngoài function là biến global
+        let email="abc@gmail.com"
+
+        {
+            // local 
+            let address="Hà Nội"
+            console.log(address)
+        }
+    </script>
+</body>
+
+</html>
