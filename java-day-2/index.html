@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        let a = true
+        console.log(a)
+
+        let b = false
+        console.log(b)
+
+        // !là phủ định 
+        console.log(!!a)
+
+        let c = 5
+        console.log(Boolean(c))
+
+        let d = 5 < 4
+        console.log(Boolean(d))
+
+        console.log(Boolean(0))
+        console.log(Boolean(""))
+
+        // false 0 NaN null undefined sẽ cho giá trị false, còn lại cho true 
+
+        console.log(true && false)
+        console.log(false&& false)
+        console.log(true && true)
+        console.log(true || false)
+        console.log(true || true)
+        console.log(false|| false)
+
+        // điều kiện if else if else
+        let e=0
+        if(e>0){
+            console.log("Số dương")
+        }
+        else if(e==0){
+            console.log("Số 0")
+        }
+        else{
+            console.log("Số âm")
+        }
+
+        let f=-3
+        if(f>0){
+            console.log("?")
+        }
+        else{
+            console.log(":")
+        }
+
+        mark=39
+        if(mark>= 85){
+            console.log("A")
+        }
+        else if(mark<85 && mark >=70){
+            console.log("B")
+        }
+        else if(mark<70 && mark>=40){
+            console.log("C")
+        }
+        else{
+            console.log("D")
+        }
+
+        function num33(g,h){
+            if(g>h){
+                return g
+            }
+            else{ 
+                return h 
+            }
+        }
+        let data=num3(7,9)
+        console.log(data)
+
+        function num2(k){
+            if(k>0){
+                return "Số dương"
+            }
+            else if(k<0){
+                return "Số âm"
+            }
+            else{
+                return "số 0"
+            }
+        }
+        let data2=num2(-4)
+        console.log(data2)
+
+        function num3(p){
+            if(p%2 == 0){
+                return "số chẵn"
+            }
+            else{
+                return "số lẻ"
+            }
+        }
+        let data3=num3(12)
+        console.log(data3)
+
+        function num4(j){
+            if(j%3 == 0 && j%5 == 0){
+                return true
+            }
+            else{
+                return false
+            }
+        }
+        let data4=num4(15)
+        console.log(data4)
+
+        function num5(l,m,n){
+            if(n == (m+l)){
+                return true
+            }
+            else{
+                return false
+            }
+        }
+        let data5=num5(1,2,7)
+        console.log(data5)
+
+
+        // câu lệnh switch-case
+        let num = 3;
+        switch(num){
+            case 1:
+                console.log("Một");
+                break
+            case 2:
+                console.log("Hai");
+                break
+            case 3:
+            case 4:
+                console.log("Ba");
+                break
+            default:
+                console.log("Không tìm thấy");
+                break
+        }
+
+        let day=1
+        switch(day){
+            case 0: 
+                console.log("Chủ nhật");
+                break
+            case 1: 
+                console.log("Thứ hai");
+                break
+            case 2: 
+                console.log("Thứ ba");
+                break
+            case 3: 
+                console.log("Thứ tư");
+                break
+            case 4: 
+                console.log("Thứ năm");
+                break
+            case 5: 
+                console.log("Thứ sáu");
+                break
+            case 6: 
+                console.log("Thứ bảy");
+                break
+        }
+        
+
+        let month=6
+        switch(month){
+            case 1:
+            case 2:
+            case 3:
+                console.log("Mùa xuân");
+                break
+            case 4:
+            case 5:
+            case 6:
+                console.log("Mùa hạ");
+                break
+            case 7:
+            case 8:
+            case 9:
+                console.log("Mùa thu");
+                break
+            case 10:
+            case 11:
+            case 12:
+                console.log("Mùa đông");
+                break
+        }
+
+
+        // vòng lặp thực thi code nhiều lần - For While ..
+
+
+        for (let i=1;i<11;i = i+1){
+            if(i%2 ==1){
+                continue
+            }
+            console.log(i);
+        }
+
+        let sum=0
+        for (let i=1;i<11;i= i+1){
+            sum = sum + i
+        }
+
+        console.log(sum)
+
+        // let sum1 = 0
+        // for (let i=2; i<11; i=i+2){
+        //     sum1 = sum1 + i
+            
+        // }
+        // console.log(sum1)
+
+        let sum2 = 0
+        for (let i=1;i<11 ; i=i+1){
+            if(i%2 ==0){
+             sum2 = sum2 + i}
+        }   
+        console.log(sum2)
+
+        let sum3 = 0
+        for (let i=1; i<101; i=i+2){
+            if(i%2 == 1){
+                sum3=sum3 +i
+            }
+        }
+        console.log(sum3)
+
+        let sum4=0
+        for(let i=0;i<101;i=i+1){
+            if(i%15 == 0){
+                sum4 = sum4+i
+            }
+        }
+        console.log(sum4)
+
+        for(let i=0;i<21; i=i+1){
+            if(i%2 == 0){
+                console.log(i +" là số chẵn")
+            }
+            else{console.log(i + " là số lẻ")}
+        }
+
+        // Kiểu dữ liệu Array dùng để lưu trữ các phần tử (các loại dữ liệu khác nhau đều được)
+
+        let number=[1,2,3,4,5,6,7,"Ha noi",false, true]
+        console.log(number);
+        // để tìm độ dài của array 
+        console.log(number.length);
+        // phần tử muốn lấy: stt-1
+        console.log(number[7])
+        // gán lại phần tử mới 
+        number [7]="Hải phòng"
+        console.log(number)
+
+        console.log(number[number.length-1])
+
+        // thêm vào cuối mảng
+        number.push(8);
+        console.log(number)
+
+        // Xóa phần tử cuối mảng 
+        number.pop();
+        console.log(number)
+
+        // Thêm 1 phần tử vào đầu mảng
+        number.unshift(0)
+        console.log(number)
+
+        // Xóa phần tử đầu mảng 
+        number.shift()
+        console.log(number)
+
+        // Xóa phần tử muốn xóa (điểm bắt đầu, số phần tử muốn xóa)
+        number.splice(1,1)
+        console.log(number)
+        
+        // thêm phần tử (điểm bắt đầu, số phần tử muốn xóa, phần tử muốn thêm)
+        number.splice(0,0,10,11,12)
+        console.log(number)
+
+        let number1=[3,2,1];
+        let number2=number.concat(number1)
+        console.log(number2)
+
+        let sum6=0 
+        for(let i=0;i< number1.length;i++){
+            console.log(number1[i]);
+            sum6 =sum6 + number1[i]
+        }
+        console.log(sum6)
+    </script>
+
+</body>
+</html>
