@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // kiểm tra giá trị có nằm trong mảng không 
+        function check(arr, a) {
+            if (arr.indexOf(a) == -1) {
+                return false
+            }
+            return true
+        }
+        console.log(check([1, 2, 3, 4], 5))
+        // Toán tử 3 ngôi ? :
+        // function checkELementExist (arr, ele)
+        // let isExist
+        // arr.indexOf(ele) !=-1 ? isExist = true : isExist = false
+        // return isExist
+
+        // console.log(checkELementExist([1,2,3,4],5))
+
+        // includes
+        // true nếu 1 phần tử nằm trong mảng
+        // false nếu phần tử không nằm trong mảng
+        // return arr.includes(ele)
+
+        // tìm số lớn thứ nhì
+        function findMaxNumberArr(arr) {
+            let maxNumber = arr[0];
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] > maxNumber) {
+                    maxNumber = arr[i];
+                }
+            }
+            return maxNumber;
+        }
+
+        function max2Numbers(arr) {
+            // bước 1: tìm số lớn nhất trong mảng ban đầu
+            let maxNum = findMaxNumberArr(arr)
+            console.log(maxNum)
+
+            // Bước 2: Loại bỏ giá trị Max
+            let newArr = []
+            for (let i = 0; i < arr.length; i = i + 1) {
+                if (arr[i] != maxNum) {
+                    newArr.push(arr[i])
+                }
+            }
+            console.log(newArr)
+
+            // Bước 3: tìm max trong newArr
+            let max2Number = findMaxNumberArr(newArr)
+            return max2Number
+        }
+        console.log(max2Numbers([2, 1, 3, 4]))
+
+
+        // Lấy số ngẫu nhiên từ một mảng 
+        function randomElement(arr){
+            let index = Math.floor(Math.random()*arr.length)
+            return arr[index]
+        }
+        console.log(randomElement([3,7,9,11]))
+
+        // Lọc các phần tử có độ dài lớn nhất
+        function findMaxlengthElement(arr){
+            // Bước 1: Tìm độ dài lớn nhất
+            let maxNumber = arr[0].length;
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i].length > maxNumber) {
+                    maxNumber = arr[i].length;
+                }
+            }
+            console.log(maxNumber)
+
+            // Bước 2: So sánh -> thêm vào mảng mới
+            let newArr=[]
+            for(let i=0;i<arr.length;i++){
+                if(arr[i].length == maxNumber){
+                    newArr.push(arr[i])
+                }
+            }
+            return newArr
+        }
+        console.log(findMaxlengthElement(["aba", "aa", "ad", "c", "vcd"]))
+
+        // Lấy ra phần tử trùng ở hai mảng 
+        function similarity(arr1,arr2){
+            let newArr=[]
+            for(let i=0; i<arr1.length; i++ ){
+                if(arr2.indexOf(arr1[i]) != -1){
+                    newArr.push(arr1[i])
+                }
+                // if(arr2.includes(arr1[i])){
+                //     newArr.push(arr1[i])
+                // }
+            }
+            return newArr
+        }
+        console.log(similarity([1, 2, 3], [1, 2, 4]))
+
+        // Lấy ra phần tử bị trùng nhau trong mảng 
+        function removeDuplicates(arr){
+            let newArr=[]
+            for(let i=0; i<arr.length; i++){
+                if(!newArr.includes(arr[i])){
+                    newArr.push(arr[i])
+                }
+            }
+            return newArr
+        }
+        console.log(removeDuplicates([1,2,5,2,6,2,5]))
+
+        // Cách 2: set - map
+        function removeDuplicates_2(arr){
+            return [...new Set (arr)]
+        }
+        console.log(removeDuplicates_2([1,2,5,2,6,2,5]))
+
+
+        // Cách 3: 
+        function removeDuplicates_1(arr){
+            let newArr=[]
+            for(let i=0; i<arr.length; i++){
+                if(arr.indexOf(arr[i]) == i){
+                    newArr.push(arr[i])
+                }
+            }
+            return newArr
+        }
+        console.log(removeDuplicates_1([1,2,5,2,6,2,5]))
+
+        // tạo mã màu Hex ngẫu nhiên 
+        function randomHexCode(){
+            let letters=[0,1,2,3,4,5,6,7,8,9,"a","b","c","d","e","f"]
+            let hexCode="#"
+            for(let i=0; i<6; i++){
+                hexCode +=letters[Math.floor(Math.random()*letters.length)]
+            }
+            return hexCode
+        }
+        console.log(randomHexCode())
+
+        function randomRgbCode(){
+            let r = Math.floor(Math.random()*256)
+            let g = Math.floor(Math.random()*256)
+            let b = Math.floor(Math.random()*256)
+            return `rgb(${r},${g},${b})`
+        }
+        console.log(randomRgbCode())
+    </script>
+</body>
+
+</html>
