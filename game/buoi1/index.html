@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>My page</title>
+    <style>
+        /* body>p:nth-child(4) {
+            color: red
+        } */
+    </style>
+</head>
+
+<body>
+    <h1 id="heading">Đây là thẻ heading</h1>
+    <!-- Phải viết id thì mới truy cập đc -->
+    <p>Thẻ para 1</p>
+    <p class="para"> Thẻ para 2</p>
+    <p class="para">Thẻ para 3</p>
+    <div class="box">
+        <ul>
+            <li style="display: none;">Thẻ li 1</li>
+            <li class="li">Thẻ li 2</li>
+            <li>Thẻ li 3</li>
+            <li>Thẻ li 4</li>
+            <!-- <li>Thẻ li 5</li> -->
+
+        </ul>
+    </div>
+
+    <script>
+        // Truy cập thông qua id
+        let heading = document.getElementById('heading');
+        console.log(heading);
+
+        // truy cập thông qua tag
+        let p = document.getElementsByTagName('p');
+        console.log(p[0]);
+        console.log(p[1]);
+        console.log(p.length);
+        console.log(p);
+
+        let h1 = document.getElementsByTagName('h1');
+        console.log(h1[0]);
+
+        // truy cập thông qua class name
+        let p_classname = document.getElementsByClassName('para');
+        console.log(p_classname);
+
+        // truy cập thông qua css selector 
+        // trả về phần tử đầu tiên mà nó nhìn thấy
+        let h1_css = document.querySelector('#heading');
+        console.log(h1_css);
+
+        let para_css = document.querySelector('.para')
+        console.log(para_css)
+
+        let para3 = document.querySelector('p:nth-child(4)')
+        console.log(para3)
+
+        let p_all = document.querySelectorAll('p')
+        console.log(p_all)
+
+        let box = document.querySelector('.box')
+        console.log(box.parentNode)
+        console.log(box.nextElementSibling)
+        console.log(box.previousElementSibling)
+        console.log(box.childNodes)
+        console.log(box.children)
+
+        let ul = document.querySelector('ul')
+        console.log(ul.childNodes)
+        console.log(ul.firstChild)
+        console.log(ul.children)
+
+        // get/set content 
+        console.log(heading.innerHTML)
+        console.log(heading.innerText)
+        console.log(heading.textContent)
+
+        console.log(ul.innerHTML)
+        // Trả về tên thẻ và nội dung thẻ 
+
+        console.log(ul.innerText)
+        // Trả về nội dung thẻ (ko hiện nội dung thẻ ẩn)
+
+        console.log(ul.textContent)
+        // Trả về nội dung thẻ có kèm định dạng
+
+        heading.innerHTML= "Xin <br> chào" 
+        heading.innerText= "Hello" 
+
+        // thay đổi style của một phần tử
+
+        heading.style.color = 'red'
+        heading.style.backgroundColor = '#000'
+        // khi thay đổi style trong js thì nó sẽ hiện lên là inline style
+        // !important > inline style
+
+        // tạo phần tử dom 
+        let para4 = document.createElement('p')
+        para4.innerText = 'Thẻ para 4'
+        para4.id = 'para4'
+        para4.className = 'para'
+        console.log(para4)
+
+        document.body.prepend(para4)
+        document.body.appendChild(para4)
+
+        let li5 = document.createElement('li')
+        li5.innerText = 'Thẻ li 5'
+        // li5.id = 'li5'
+        // li5.class = 'li5'
+        console.log(li5)
+        ul.appendChild(li5)
+
+        let newPara = document.createElement('p')
+        newPara.innerText = 'New para'
+
+        let para2 = document.querySelector('.para')
+
+        document.body.insertBefore(newPara, para2)
+
+        let li4 = document.createElement('li')
+        li4.innerText = 'New li'
+
+        ul.insertBefore(li4, li5)
+
+        // xóa phần tử 
+        let para1 = document.querySelector('p')
+        console.log(para1)
+
+        document.body.removeChild(para1)
+
+        ul.removeChild(li4)
+
+        // thay thế
+        let link = document.createElement('a')
+        link.innerText='Google'
+        link.href='https://google.com'
+        link.target='_blank'
+
+        document.body.replaceChild(link,para2)
+
+        let input = document.createElement('input')
+        input.type = 'text'
+        input.placeholder = 'Nhập tên'
+        input.autocomplete = 'off'
+        document.body.replaceChild(input,para3)
+
+        // Sao chép phần tử
+        let ulCopy = ul.cloneNode(true)
+        document.body.appendChild(ulCopy)
+
+        let boxClass = document.querySelector('.box')
+        let liClass = box.querySelector('.li')
+        
+
+    </script>
+</body>
+
+</html>

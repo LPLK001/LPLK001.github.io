@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .text-big{
+            font-size: 2rem;
+        }
+        .text-red{
+            color: red;
+        }
+        .text-bold{
+            font-weight: bold;
+        }
+        .text-upper{
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <p class="para"> Đây là thẻ p</p>
+    <script>
+        let para = document.querySelector('.para')
+        console.log(para.classList.length)
+
+        // Add(): thêm class
+        // có thể thêm 1 hoặc nhiều class
+        para.classList.add('text-big','text-red','text-upper')
+
+        // remove(): xóa class
+        // có thể xóa 1 hoặc nhiều class
+        para.classList.remove('text-red','text-upper')
+
+        // contains():Kiểm tra xem class được chỉ định có tồn tại trong phần tử hay không 
+        // Nếu có => true
+        // Nếu không => false 
+        console.log(para.classList.contains('text-big'))
+        console.log(para.classList.contains('text-red'))
+
+        // toggle() :kiểm tra một class nếu có tồn tại trong phần tử đó thì xóa đi, nếu không có thì thêm vào 
+        // setInterval(function(){
+        //     para.classList.toggle('text-big')
+        // },1500)
+        // mili giây 
+        setTimeout(toggleClass,2000)
+        function toggleClass(){
+            para.classList.toggle('text-big')
+        }
+
+        // let time = 15;
+        // let interval = setInterval(function(){
+        //     time--
+        //     para.innerText = time
+        //     if(time<10){para.style.color = 'red'}
+        //     if(time == 0){
+        //         clearInterval(interval);
+        //     }
+        // },1000)
+
+
+
+    </script>
+</body>
+</html>

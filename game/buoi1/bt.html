@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <p id="text">abcxyz</p>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <script>
+        let text = document.getElementById('text')
+        text.innerHTML = 'Tôi có thể làm <em> bất cứ điều gì </em> tôi muốn với JavaScript.'
+        text.style.color = '#777777'
+        text.style.size = '2rem'
+
+        let li = document.getElementsByTagName('li')
+        for (let i = 0; i < li.length; i++){
+            li[i].style.color = 'blue'
+        }
+
+    </script>
+</body>
+
+</html>
