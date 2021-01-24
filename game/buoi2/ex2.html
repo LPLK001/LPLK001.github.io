@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .display-none {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <p>abcxyz</p>
+    <button>Ẩn/Hiện thẻ p</button>
+    <div>
+        <label for="texture-selector">Choose a texture:</label>
+        <select id="texture-selector">
+            <option value="https://image.freepik.com/free-vector/memphis-seamless-patterns_9202-768.jpg">Memphis
+                Seamless</value>
+            <option value="https://image.freepik.com/free-vector/retro-styled-pattern-background_1048-6593.jpg">
+                Retro-styled</value>
+            <option value="https://image.freepik.com/free-vector/abstract-background-with-3d-pattern_1319-68.jpg">3D
+                Cubes</value>
+        </select>
+    </div>
+
+    <div id="texture-background" style="width: 400px; height: 400px"></div>
+    <script>
+        let button = document.querySelector('button')
+        button.addEventListener('click', hidden)
+        let p = document.querySelector('p')
+        function hidden() {
+            p.classList.toggle('display-none')
+        }
+        let div2 = document.getElementById('texture-background')
+        let select = document.querySelector('select')
+        select.addEventListener('change',function(){
+            let value = select.value
+            div2.style.backgroundImage = `url(${this.value})`
+        })
+    </script>
+</body>
+
+</html>

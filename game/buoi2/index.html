@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading">Đây là thẻ heading</h1>
+    <!-- Phải viết id thì mới truy cập đc -->
+    <p>Thẻ para 1</p>
+    <p class="para"> Thẻ para 2</p>
+    <p class="para">Thẻ para 3</p>
+    <div class="box">
+        <ul >
+            <li style="display: none;">Thẻ li 1</li>
+            <li class="li">Thẻ li 2</li>
+            <li>Thẻ li 3</li>
+            <li>Thẻ li 4</li>
+            <!-- <li>Thẻ li 5</li> -->
+
+        </ul>
+    </div>
+    <script>
+        let para4 = document.createElement('p')
+        para4.innerText ='Thẻ para 4'
+        let box = document.querySelector('.box')
+        let para3 = document.querySelector(' p:nth-child(4)')
+        // document.body.insertBefore(para4,box)
+        // box.insertAdjacentElement('beforebegin', para4)
+        // before begin, after begin, before end, after end
+        // para3.insertAdjacentElement('afterend',para4)
+
+        para3.insertAdjacentHTML('afterend', '<p> Thẻ para 4</p>')
+        
+        let ul = document.querySelector('ul')      
+        let li5 = document.createElement('li')
+        li5.innerText = 'Thẻ li 5'
+        ul.insertAdjacentElement('beforeend',li5)
+        
+        
+    </script>
+</body>
+</html>

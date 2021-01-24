@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" placeholder="Enter name" class="input">
+    <h1></h1>
+    <button class="btn">Submit</button>
+    <script>
+        let btn = document.querySelector('.btn')
+        let input = document.querySelector('.input')
+        let h1 = document.querySelector('h1')
+
+        btn.addEventListener('click', function () {
+            let value = input.value
+            if (value == '') {
+                alert("Nhập tên đi!")
+                return
+            }
+            h1.innerText = value
+            input.value = ''
+            input.focus();
+
+        })
+
+        input.addEventListener('blur', function(e){
+            let value = this.value
+            // let value = e.target.value
+            this.value = value.toUpperCase()
+        })
+
+    </script>
+</body>
+
+</html>

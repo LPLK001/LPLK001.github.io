@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập DOM 3 (buổi 2)</title>
+</head>
+
+<body>
+    <script>
+        let div = document.createElement('div')
+        div.innerText = '0'
+
+
+
+        let plus = document.createElement('button')
+        plus.type = 'button'
+        plus.innerText = 'Cộng'
+        plus.addEventListener('click', function () {
+            div.innerText = div.innerText * 1 + 1;
+            if (div.innerText * 1 == 0) {
+                div.style.color = '#333333'
+            }
+            else if (div.innerText * 1 > 0) {
+                div.style.color = 'green'
+            }
+        })
+
+        let minus = document.createElement('button')
+        minus.type = 'button'
+        minus.innerText = 'Trừ'
+        minus.addEventListener('click', function () {
+            div.innerText = div.innerText - 1;
+            if(div.innerText*1 < 0){
+                div.style.color = 'red'
+            }
+        }
+        )
+
+
+        document.body.appendChild(div)
+        document.body.appendChild(plus)
+        document.body.appendChild(minus)
+
+    </script>
+</body>
+
+</html>

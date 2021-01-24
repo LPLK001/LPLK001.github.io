@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="sayHello()">Click me</button>
+    <button id="btn">Click</button>
+    <button id="btn_01">Click 123</button>
+    <h1>20</h1>
+    <script>
+        // cách 1
+        let h1 = document.querySelector('h1')
+        function sayHello(){
+            console.log("hello");
+            let time = 20
+            let interval = setInterval(function(){
+                time--
+                h1.innerText = time
+                if (time == 0){clearInterval(interval)}
+            },1000)
+        }
+        
+
+        // cách 2
+        let btn = document.getElementById('btn')
+        // btn.onclick = function(){
+        //     console.log("hello 1")
+        // }
+
+        let newPara = document.createElement('p')
+        newPara.innerText = 'abcxyz'
+
+        btn.onclick = sayhello_01
+        function sayhello_01(){
+            console.log("Hello1");
+            document.body.insertAdjacentElement('beforeend',newPara);
+        }
+
+        // cách 3
+        let button = document.getElementById('btn_01')
+        button.addEventListener('click',function(){
+            console.log("hello2")
+        })
+        
+        button.addEventListener('click',function(){
+            btn.style.backgroundColor = 'red'
+        })
+
+        document.addEventListener('mousemove',function(){
+            console.log('mousemove');
+            console.log(event)
+        })
+
+
+
+    </script>
+</body>
+</html>
