@@ -32,7 +32,10 @@
         minus.innerText = 'Trừ'
         minus.addEventListener('click', function () {
             div.innerText = div.innerText - 1;
-            if(div.innerText*1 < 0){
+            if (div.innerText * 1 == 0) {
+                div.style.color = '#333333'
+            }
+            else if(div.innerText*1 < 0){
                 div.style.color = 'red'
             }
         }
