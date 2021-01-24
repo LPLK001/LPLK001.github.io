@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        .hide {
+            display: none;
+        }
     </style>
 </head>
 
@@ -37,23 +40,43 @@
         li3.style.backgroundColor = 'green'
 
         ul.removeChild(li4)
-        
+
         let newLi = document.createElement('li')
         newLi.innerText = 'Random'
-        ul.insertBefore(newLi,li5)
+        ul.insertBefore(newLi, li5)
 
         let button = document.createElement('button')
         button.type = 'button'
         button.innerText = 'Add'
-        button.addEventListener('click',function(){
+        button.addEventListener('click', function () {
             let newLi = document.createElement('li')
             newLi.innerText = input.value
             ul.appendChild(newLi)
         })
-        
-        
+
+        let button_1 = document.createElement('button')
+        button_1.type = 'button'
+        button_1.innerText = 'Remove'
+        let list = document.getElementById('list')
+        button_1.addEventListener('click', function () {
+            list.removeChild(list.lastChild)
+        })
+
+        document.body.appendChild(button_1)
         document.body.appendChild(button)
 
+        let button_2 = document.createElement('button')
+        button_2.type = 'button'
+        button_2.innerText = 'Hide'
+        button_2.addEventListener('click', function () {
+            if (ul.classList.toggle('hide')) {
+                button_2.innerText = 'Show'
+            }
+            else { button_2.innerText = 'Hide' }
+        })
+
+
+        document.body.insertBefore(button_2, ul)
 
         let input = document.createElement('input')
         input.type = 'text'
