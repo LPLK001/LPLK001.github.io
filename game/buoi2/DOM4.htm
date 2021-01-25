@@ -56,6 +56,49 @@
         ]
         let span = document.querySelector('span')
         span.innerText = 0
+        let box1 = document.createElement('div')
+            let box2 = document.createElement('div')
+            let box3 = document.createElement('div')
+            let box4 = document.createElement('div')
+            let box5 = document.createElement('div')
+            box1.classList.add('box')
+            box2.classList.add('box')
+            box3.classList.add('box')
+            box4.classList.add('box')
+            box5.classList.add('box')
+            let div2 = document.querySelector('body > div > div')
+            div2.insertAdjacentElement('beforeend', box1)
+            div2.insertAdjacentElement('beforeend', box2)
+            div2.insertAdjacentElement('beforeend', box3)
+            div2.insertAdjacentElement('beforeend', box4)
+            div2.insertAdjacentElement('beforeend', box5)
+
+            box1.style.backgroundColor = `${colors[0]}`
+            box2.style.backgroundColor = `${colors[1]}`
+            box3.style.backgroundColor = `${colors[2]}`
+            box4.style.backgroundColor = `${colors[3]}`
+            box5.style.backgroundColor = `${colors[4]}`
+            box1.addEventListener('click', function () {
+                box1.style.display = 'none'
+                span.innerText = span.innerText - 1
+            })
+            box2.addEventListener('click', function () {
+                box2.style.display = 'none'
+                span.innerText = span.innerText - 1
+            })
+            box3.addEventListener('click', function () {
+                box3.style.display = 'none'
+                span.innerText = span.innerText - 1
+            })
+            box4.addEventListener('click', function () {
+                box4.style.display = 'none'
+                span.innerText = span.innerText - 1
+            })
+            box5.addEventListener('click', function () {
+                box5.style.display = 'none'
+                span.innerText = span.innerText - 1
+            })
+            span.innerText = span.innerText * 1 + 5
 
         let btn = document.getElementById('btn')
         btn.addEventListener('click', function () {
