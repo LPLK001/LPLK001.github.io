@@ -49,9 +49,12 @@
         button.type = 'button'
         button.innerText = 'Add'
         button.addEventListener('click', function () {
-            let newLi = document.createElement('li')
-            newLi.innerText = input.value
-            ul.appendChild(newLi)
+            if (input.value != '') {
+                let newLi = document.createElement('li')
+                newLi.innerText = input.value
+                ul.appendChild(newLi)
+            }
+            input.value = ''
         })
 
         let button_1 = document.createElement('button')
@@ -59,9 +62,11 @@
         button_1.innerText = 'Remove'
         let list = document.getElementById('list')
         button_1.addEventListener('click', function () {
-            list.removeChild(list.lastChild)
+            if (list.childElementCount != 0) {
+                list.removeChild(list.lastChild)
+            }
         })
-
+        console.log(list.childElementCount)
         document.body.appendChild(button_1)
         document.body.appendChild(button)
 
