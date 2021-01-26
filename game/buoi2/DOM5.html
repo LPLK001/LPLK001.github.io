@@ -10,6 +10,10 @@
 
 <body>
     <div id="title">Thử tài tính toán nào bạn ơi!</div>
+    <div id="count">
+        <div id="ans">Số đáp án đúng: <span id="anscount">0</span></div>
+        <div id="time">Thời gian: <span id="timecount">1:00</span></div>
+    </div>
     <div id="container">
         <div class="box" id="num1"></div>
         <div class="symbol">+</div>
@@ -18,12 +22,18 @@
         <div class="box" id="total"></div>
         <button id="check">Kiểm tra</button>
     </div>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Chúc mừng bạn đã hoàn thành thử thách, bạn đã trả lời đúng <span id="achieve">0</span> câu hỏi </p>
+        </div>
+    </div>
     <script>
         let num1 = document.getElementById('num1')
         let num2 = document.getElementById('num2')
 
-        num1.innerText = `${Math.floor(Math.random() * 10) + 1}`
-        num2.innerText = `${Math.floor(Math.random() * 10) + 1}`
+        num1.innerText = `${Math.floor(Math.random() * 1000) + 1}`
+        num2.innerText = `${Math.floor(Math.random() * 1000) + 1}`
 
         let a = num1.innerText * 1 + num2.innerText * 1
 
@@ -37,14 +47,49 @@
         let total = document.getElementById('total')
         total.insertAdjacentElement("beforeend", input)
 
+        let anscount = document.getElementById('anscount')
+        let timecount = document.getElementById('timecount')
+        let time = 60
+        let interval = setInterval(function () {
+            time--
+            timecount.innerText = `0:${time}`
+            if (time < 10) {
+                timecount.innerText = `0:0${time}`
+            }
+            if (time == 0) {
+                clearInterval(interval)
+                let modal = document.getElementById("myModal");
+                modal.style.display = 'block'
+            }
+        }, 1000)
+
+
         let check = document.getElementById('check')
         check.addEventListener('click', function () {
             alert(Boolean(num1.innerText * 1 + num2.innerText * 1 == input.value));
-            num1.innerText = `${Math.floor(Math.random() * 10) + 1}`
-            num2.innerText = `${Math.floor(Math.random() * 10) + 1}`
+            if (num1.innerText * 1 + num2.innerText * 1 == input.value) {
+                num1.innerText = `${Math.floor(Math.random() * 1000) + 1}`
+                num2.innerText = `${Math.floor(Math.random() * 1000) + 1}`
+                anscount.innerText = anscount.innerText * 1 + 1
+                achieve.innerText = anscount.innerText
+            }
             input.value = ''
         })
 
+        let modal = document.getElementById("myModal");
+        let span = document.getElementsByClassName("close")[0];
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        let achieve = document.getElementById('achieve')
     </script>
 </body>
 
